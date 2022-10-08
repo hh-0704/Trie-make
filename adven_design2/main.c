@@ -74,7 +74,7 @@ Trie* Word_delete(Trie* cur, char* word, int depth) {	/*트라이에서 단어를 삭제하
 	}
 	int idx = word[depth] - 'a';
 	cur->children[idx] = Word_delete(cur->children[idx], word, depth + 1);		/*재귀적으로 자식노드들의 삭제를 수행한다.*/
-	if (nodechildren(cur) == 1 && cur->word_end == 0) {			/*단어의 끝에 도달하여 자식노드가 없고 word_end의 값이 0인 경우 노드를 삭제한다.*/
+	if (nodechildren(cur) == 1 && cur->word_end == 0) {			/*자식노드가 없고 word_end의 값이 0인 경우 노드를 삭제한다.*/
 		free(cur);
 		cur = NULL;
 	}
